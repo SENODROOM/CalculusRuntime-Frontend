@@ -170,7 +170,7 @@ const ContinuityFinder = () => {
         setVariables(newVars);
     };
 
-    const evaluateSpecialValue = (str) => {
+    const evaluateSpecialValue = useCallback((str) => {
         if (!str) return 0;
 
         let expr = str
@@ -191,7 +191,7 @@ const ContinuityFinder = () => {
             const num = parseFloat(str);
             return isNaN(num) ? 0 : num;
         }
-    };
+    }, []);
 
     // Analyze continuity
     const analyzeContinuity = useCallback(async () => {
@@ -265,7 +265,7 @@ const ContinuityFinder = () => {
             console.error('ERROR:', error);
             showToastMessage('Error: ' + error.message);
         }
-    }, [variables, analysisType, checkContinuityAtPoint, generateConclusion]); // eslint-disable-line react-hooks/exhaustive-deps, no-use-before-define
+    }, [variables, analysisType, checkContinuityAtPoint, generateConclusion]);
 
     // Analyze the domain of the function
     const analyzeDomain = (latex, expr, vars) => {
@@ -352,7 +352,7 @@ const ContinuityFinder = () => {
     };
 
     // Check continuity at a specific point
-    const checkContinuityAtPoint = (expr, vars) => {
+    const checkContinuityAtPoint = useCallback((expr, vars) => {
         try {
             const scope = {};
             vars.forEach(v => {
@@ -388,10 +388,10 @@ const ContinuityFinder = () => {
                 math: `f(${vars.map(v => v.value).join(',')}) = \\text{undefined}`
             };
         }
-    };
+    }, [evaluateSpecialValue]);
 
     // Generate conclusion
-    const generateConclusion = (domainAnalysis, continuityResult, vars) => {
+    const generateConclusion = useCallback((domainAnalysis, continuityResult, vars) => {
         if (analysisType === 'point' && continuityResult) {
             return {
                 isContinuous: continuityResult.isContinuous ? 'Continuous' : 'Discontinuous',
@@ -408,7 +408,7 @@ const ContinuityFinder = () => {
                 math: domainAnalysis.domainLatex
             };
         }
-    };
+    }, [analysisType]);
 
     return (
         <div className="app-body">
