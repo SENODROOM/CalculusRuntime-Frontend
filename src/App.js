@@ -9,7 +9,8 @@ import ScrollToTop from './utils/ScrollToTop';
 import ContinuityFinder from "./pages/ContinuityFinder";
 import ExtremeValueFunction from "./pages/ExtremeValueFinder";
 import VolumeCalculator from "./pages/VolumeCalculator";
-import StudyGuidePage from "./pages/StudyGuidePage";
+import PartialDerivativesGuide from "./pages/PartialDerivativesGuide";
+import VectorCalculusGuide from "./pages/VectorCalculusGuide";
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout body={<Home />} />} />
-          <Route path="/partial-derivatives" element={<Layout body={<StudyGuidePage guide="partial" />} />} />
-          <Route path="/vector-calculus" element={<Layout body={<StudyGuidePage guide="vector" />} />} />
+          <Route path="/partial-derivatives" element={<Layout body={<PartialDerivativesGuide />} />} />
+          <Route path="/vector-calculus" element={<Layout body={<VectorCalculusGuide />} />} />
           <Route path="/test" element={<Layout body={<ContinuityFinder />} />} />
           <Route path="/extreme" element={<Layout body={<ExtremeValueFunction />} />} />
           <Route path="/volumecalculator" element={<Layout body={<VolumeCalculator />} />} />
