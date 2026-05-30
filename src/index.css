@@ -1489,7 +1489,6 @@ body::before {
 }
 
 .site-footer {
-  margin: 0 clamp(1rem, 3vw, 2.5rem) 1rem;
   background: #17201c;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
