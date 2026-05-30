@@ -190,6 +190,36 @@ function Home() {
         </section>
       )}
 
+      {/* AI Solver feature banner */}
+      {!query && (
+        <section className="ai-feature-banner">
+          <div className="ai-feature-content">
+            <span className="ai-feature-icon">🤖</span>
+            <div>
+              <div className="ai-feature-title">AI Calculus Solver</div>
+              <div className="ai-feature-desc">
+                Neural tree-to-tree transformer trained on 5.5M problems. Solves derivatives, integrals, gradients, Lagrange multipliers — with step-by-step explanations.
+              </div>
+            </div>
+          </div>
+          <Link to="/ai-solver" className="ai-feature-btn">Try the solver →</Link>
+        </section>
+      )}
+
+      {/* Sign up CTA for guests */}
+      {!user && !query && (
+        <section className="home-cta">
+          <div className="home-cta-content">
+            <h2>Track your progress for free</h2>
+            <p>Create an account to bookmark sections, save quiz scores, and pick up where you left off — just like freeCodeCamp.</p>
+            <div className="home-cta-actions">
+              <Link to="/signup" className="primary-action">Create free account</Link>
+              <Link to="/login" className="secondary-action">Sign in</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Stats strip */}
       <div className="home-stats">
         <div className="stat-item">
