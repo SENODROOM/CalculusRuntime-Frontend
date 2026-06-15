@@ -25,6 +25,16 @@ const CURRICULUM = [
       { id: "vector-2", label: "Part 2 — Green's Theorem & Surfaces", path: "/vector-calculus/2" },
     ],
   },
+   {
+    id: "limits",
+    title: "Limits & Continuity",
+    icon: "lim",
+    color: "purple",
+    parts: [
+      { id: "limits-1", label: "Part 1 — Limits of Multivariable Functions", path: "/limits-continuity/1" },
+      { id: "limits-2", label: "Part 2 — Continuity", path: "/limits-continuity/2" },
+    ],
+  },
 ];
 
 const TOOLS = [
