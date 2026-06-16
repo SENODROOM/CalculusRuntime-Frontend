@@ -3,6 +3,8 @@ import { AuthProvider } from "./context/AuthContext";
 import { ProgressProvider } from "./context/ProgressContext";
 import Layout from "./components/Layout";
 import ScrollToTop from "./utils/ScrollToTop";
+import IntegralsPart1 from "./pages/IntegralsPart1";
+import IntegralsPart2 from "./pages/IntegralsPart2";
 
 // Pages
 import Home from "./pages/Home";
@@ -55,7 +57,11 @@ function App() {
             <Route path="/limits-continuity" element={<Navigate to="/limits-continuity/1" replace />} />
             <Route path="/limits-continuity/1" element={<Layout body={<LimitsPart1 />} />} />
             <Route path="/limits-continuity/2" element={<Layout body={<LimitsPart2 />} />} />
-
+             
+            {/* Multiple Integrals */}
+<Route path="/multiple-integrals" element={<Navigate to="/multiple-integrals/1" replace />} />
+<Route path="/multiple-integrals/1" element={<Layout body={<IntegralsPart1 />} />} />
+<Route path="/multiple-integrals/2" element={<Layout body={<IntegralsPart2 />} />} />
             {/* Tools */}
             <Route path="/test" element={<Layout body={<ContinuityFinder />} />} />
             <Route path="/extreme" element={<Layout body={<ExtremeValueFunction />} />} />

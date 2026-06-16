@@ -40,6 +40,16 @@ const guideCards = [
     icon: "lim",
     color: "purple",
   },
+
+  {
+  title: "Multiple Integrals",
+  description:
+    "Double and triple integrals, Fubini's theorem, changing order of integration, polar and cylindrical coordinates.",
+  path: "/multiple-integrals/1",
+  meta: "2 parts · MCQ practice · Worked integrals",
+  icon: "\u222c",
+  color: "teal",
+},
 ];
 
 const toolLinks = [
