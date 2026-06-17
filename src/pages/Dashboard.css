@@ -342,3 +342,178 @@
 .db-quiz-row .db-progress-bar {
   grid-column: 1 / -1;
 }
+/* ── Study Streak ── */
+.db-streak-chart-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin: 1.5rem 2rem;
+}
+
+.db-streak-card {
+  background: linear-gradient(135deg, #fff8ee, #fff3e0);
+  border: 1px solid #f0c060;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.db-streak-fire {
+  font-size: 2.5rem;
+}
+
+.db-streak-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e67e00;
+  line-height: 1;
+}
+
+.db-streak-label {
+  font-size: 0.85rem;
+  color: #7a6a50;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.db-streak-msg {
+  font-size: 0.82rem;
+  color: #7a6a50;
+  margin: 0;
+}
+
+/* ── Progress Chart ── */
+.db-chart-wrapper {
+  background: #fff;
+  border: 1px solid #e8e2d9;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.db-chart-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 1rem;
+}
+
+.db-chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.db-chart-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 40px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.db-chart-label {
+  font-size: 0.82rem;
+  color: #4a5568;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.db-chart-bar-bg {
+  background: #f0ece6;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.db-chart-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.db-chart-bar--teal { background: #2a9d8f; }
+.db-chart-bar--blue { background: #3d4f6b; }
+.db-chart-bar--purple { background: #7c5cbf; }
+
+.db-chart-pct {
+  font-size: 0.78rem;
+  color: #718096;
+  text-align: right;
+}
+
+.db-chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.db-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: #718096;
+}
+
+.db-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.db-legend-dot--done { background: #2a9d8f; }
+.db-legend-dot--progress { background: #e8b84b; }
+.db-legend-dot--none { background: #d4cdc5; }
+
+/* ── Bookmark Search ── */
+.db-bookmark-search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.db-bookmark-search {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d4cdc5;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #fff;
+  color: #2d3748;
+}
+
+.db-bookmark-search:focus {
+  border-color: #2a9d8f;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.15);
+}
+
+.db-bookmark-count {
+  font-size: 0.82rem;
+  color: #718096;
+  white-space: nowrap;
+}
+
+.db-bookmark-empty {
+  color: #718096;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .db-streak-chart-row {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+
+  .db-chart-row {
+    grid-template-columns: 100px 1fr 36px;
+  }
+}
